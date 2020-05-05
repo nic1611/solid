@@ -1,4 +1,7 @@
 ﻿using System;
+using SOLID.DIP;
+using SOLID.DIP.Contracts;
+using SOLID.ISP;
 using SOLID.LSP;
 using SOLID.OCP;
 using SOLID.SRP;
@@ -27,9 +30,19 @@ namespace SOLID
 
             var pf = new PessoaFisica("Andre", "999.999.999-99");
             #endregion
-        
+
             #region  [ LSP ]
             var veiculo = new Carro();
+            #endregion
+
+            #region [ ISP ]
+            NotaFiscal nf = new NotaFiscal();
+            nf.RealizarPedido();
+            #endregion
+
+            #region [ DIP ]
+            //var repo = new CustomerRepository();
+            //var customerService = new CustomerService(repo);
             #endregion
         }
     }
